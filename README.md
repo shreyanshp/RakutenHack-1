@@ -7,25 +7,27 @@ I suppose you have NPM already installed
 
 Download the repository by using command line interface and typing in the folder where you desire to install
 
-git clone https://github.com/erick84mm/RakutenHack.git
+`git clone https://github.com/erick84mm/RakutenHack.git`
 
 The second step will be to enter to the downloaded using command line interface
 
-cd RakutenHack
-npm install
+`cd RakutenHack`
 
-cd ios
-pod install
+`npm install`
+
+`cd ios`
+
+`pod install`
 
 
-cd ..
-react-native link react-native-svg
+`cd ..`
+`react-native link react-native-svg`
 
 
 To test that the code runs run (for the android version you need to have the simulator previously open)
 
-react-native run-ios
-react-native run-android
+`react-native run-ios`
+`react-native run-android`
 
 
 
