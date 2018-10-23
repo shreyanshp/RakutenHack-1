@@ -21,12 +21,14 @@ The second step will be to enter to the downloaded using command line interface
 
 
 `cd ..`
+
 `react-native link react-native-svg`
 
 
 To test that the code runs run (for the android version you need to have the simulator previously open)
 
 `react-native run-ios`
+
 `react-native run-android`
 
 
