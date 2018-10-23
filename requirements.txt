@@ -1,0 +1,6 @@
+npm install react-navigation --save
+npm install react-native-ui-kitten --save
+npm install moment --save
+npm install victory-native --save
+npm install react-native-svg --save
+npm install react-native-linear-gradient --save

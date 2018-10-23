@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>868721902496-k7spv8tvfbel76nmocab446c51b65q5n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.868721902496-k7spv8tvfbel76nmocab446c51b65q5n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDxA0r0Oeax7Qp716NB6IDG-XkzG8CPHck</string>
+	<key>GCM_SENDER_ID</key>
+	<string>868721902496</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.noname.supernannies</string>
+	<key>PROJECT_ID</key>
+	<string>rakutenhack</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rakutenhack.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:868721902496:ios:ad1ff56e07d409d1</string>
+	<key>DATABASE_URL</key>
+	<string>https://rakutenhack.firebaseio.com</string>
+</dict>
+</plist>

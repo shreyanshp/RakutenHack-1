@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "868721902496",
+    "firebase_url": "https://rakutenhack.firebaseio.com",
+    "project_id": "rakutenhack",
+    "storage_bucket": "rakutenhack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868721902496:android:ad1ff56e07d409d1",
+        "android_client_info": {
+          "package_name": "com.noname.supernannies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868721902496-i7out73v6j3ssqauue6b9j15lgjopgtt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgoEYqloReUSHA5XANuwdCzJZ5MSMezy8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
