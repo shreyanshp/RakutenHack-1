@@ -1,3 +1,34 @@
+## React Native - Firebase - Kitten UI Starter
+
+## Installation instructions for RakutenHack team
+
+
+I suppose you have NPM already installed
+
+Download the repository by using command line interface and typing in the folder where you desire to install
+
+git clone https://github.com/erick84mm/RakutenHack.git
+
+The second step will be to enter to the downloaded using command line interface
+
+cd RakutenHack
+npm install
+
+cd ios
+pod install
+
+
+cd ..
+react-native link react-native-svg
+
+
+To test that the code runs run (for the android version you need to have the simulator previously open)
+
+react-native run-ios
+react-native run-android
+
+
+
 ## React Native Firebase Starter<a href="https://invertase.io/oss/react-native-firebase"><img align="left" src="https://i.imgur.com/JIyBtKW.png" width="180px"></a>
 
 [![Backers on Open Collective](https://opencollective.com/react-native-firebase/backers/badge.svg)](#backers)
@@ -40,7 +71,7 @@ A basic react native app with [`react-native-firebase`](https://github.com/inver
 - 3.2) **[iOS]** Place this file in the `ios/` directory of your project.
 - 3.3) **[Android]** Follow the `manually add firebase` to your app instructions [here](https://firebase.google.com/docs/android/setup#manually_add_firebase) to generate your `google-services.json` file if you haven't done so already - use the package name generated previously as your `Android package name`.
 - 3.4) **[Android]** Place this file in the `android/app/` directory of your project.
-  
+
 #### 4) Start your app
 
 - 4.1) Start the react native packager, run `yarn run start` or `npm start` from the root of your project.
@@ -48,7 +79,7 @@ A basic react native app with [`react-native-firebase`](https://github.com/inver
 - 4.3) **[Android]** If you haven't already got an android device attached/emulator running then you'll need to get one running (make sure the emulator is with Google Play / APIs). When ready run `npm run android` or `yarn run android` from the root of your project.
 
 If all has gone well you'll see an initial screen like the one below.
-  
+
 ## Screenshots
 
 ![preview](https://i.imgur.com/4lG4HuS.png)
