@@ -195,6 +195,13 @@ PODS:
     - React/Core (= 0.57.1)
   - React/Core (0.57.1):
     - yoga (= 0.57.1.React)
+  - React/RCTImage (0.57.1):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.57.1):
+    - React/Core
+  - RNSVG (8.0.3):
+    - React
   - yoga (0.57.1.React)
 
 DEPENDENCIES:
@@ -212,7 +219,8 @@ DEPENDENCIES:
   - Firebase/Performance (~> 5.9.0)
   - Firebase/RemoteConfig (~> 5.9.0)
   - Firebase/Storage (~> 5.9.0)
-  - React (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -255,6 +263,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-linear-gradient"
   React:
     :path: "../node_modules/react-native"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -293,8 +303,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  RNSVG: 6252323c0312735f0af5f58b5adf2965b6a9ffbf
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 1dccbd609129a65443cd1f1b81bdcd62da91da10
+PODFILE CHECKSUM: d04d12b06d7fbd5abc0a3b314ecbf8987f7b12d6
 
 COCOAPODS: 1.5.3
