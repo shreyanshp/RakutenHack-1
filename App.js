@@ -3,7 +3,6 @@ import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-nativ
 
 import firebase from 'react-native-firebase';
 
-
 import {
   createDrawerNavigator,
   createStackNavigator,
@@ -14,6 +13,13 @@ import * as Screens from './screens';
 import { bootstrap } from './config/bootstrap';
 import { data } from './data';
 
+var config = {
+  apiKey: "AIzaSyDxA0r0Oeax7Qp716NB6IDG-XkzG8CPHck",
+  authDomain: "rakutenhack.firebaseapp.com",
+  databaseURL: "https://rakutenhack.firebaseio.com",
+  storageBucket: "rakutenhack.appspot.com",
+};
+firebase.initializeApp(config);
 
 bootstrap();
 data.populateData();
@@ -21,6 +27,9 @@ data.populateData();
 const SuperNannies = createStackNavigator({
   First: {
     screen: Screens.SplashScreen,
+  },
+  Login: {
+    screen: Screens.Login_0,
   },
   Home: {
     screen: createDrawerNavigator(
@@ -43,6 +52,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {};
+    this.ref = firebase.firestore().collection('user');
   }
 
   state = {

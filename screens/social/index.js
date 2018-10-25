@@ -1,3 +1,4 @@
+export * from './profile_parent';
 export * from './profile1';
 export * from './profile2';
 export * from './profile3';
