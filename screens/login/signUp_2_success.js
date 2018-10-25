@@ -39,6 +39,15 @@ export class SignUp_2 extends React.Component {
       country: this.props.navigation.state.params.country,
       zipcode: this.props.navigation.state.params.zipcode,
     }
+
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then((user) => {
+        console.log("Success!");
+      })
+      .catch((error) => {
+        const { code, message } = error;
+        console.log("Failure!");
+      });
   }
 
   getThemeImageSource = (theme) => (

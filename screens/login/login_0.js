@@ -35,6 +35,15 @@ export class Login_0 extends React.Component {
     header: null,
   };
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      password: "",
+      user: undefined,
+    }
+  }
+
   getThemeImageSource = (theme) => (
     theme.name === 'light' ?
       require('../../assets/images/backgroundLoginV1.png') : require('../../assets/images/backgroundLoginV1DarkTheme.png')
@@ -56,14 +65,16 @@ export class Login_0 extends React.Component {
 
   onDummyButtonPressed = () => {
 
-    console.log(database);
+    const email = this.state.email;
+    const password = this.state.password;
 
-    var ref = database.ref("/users/user1");
-
-    ref.on("value", function(snapshot) {
-      console.log(snapshot.val());
-    }, function (error) {
-       console.log("Error: " + error.code);
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      
+      console.log(errorCode);
+      console.log(errorMessage);
     });
   };
 
@@ -89,13 +100,21 @@ export class Login_0 extends React.Component {
       <View style={styles.container}>
         <RkTextInput
           rkType = 'rounded'
-          placeholder = 'Username'
+          placeholder = 'Email'
           autoCorrect = {false}
+          onChangeText = {(email) => this.setState({email})}
         />
         <RkTextInput
           rkType = 'rounded'
           placeholder = 'Password'
           secureTextEntry
+          onChangeText = {(password) => this.setState({password})}
+        />
+        <GradientButton
+          style={styles.save}
+          rkType='large'
+          onPress={this.onDummyButtonPressed}
+          text='DUMMY'
         />
         <GradientButton
           style={styles.save}
