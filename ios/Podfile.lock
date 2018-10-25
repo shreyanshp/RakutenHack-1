@@ -200,7 +200,7 @@ PODS:
     - React/RCTNetwork
   - React/RCTNetwork (0.57.1):
     - React/Core
-  - RNSVG (8.0.3):
+  - RNSVG (8.0.8):
     - React
   - yoga (0.57.1.React)
 

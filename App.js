@@ -31,6 +31,16 @@ const SuperNannies = createStackNavigator({
   Login: {
     screen: Screens.Login_0,
   },
+  Activities: {
+
+    screen: Screens.Activities,
+    navigationOptions: ({navigation}) => ({
+      contentComponent: (props) => {
+        const SideMenu = withRkTheme(Screens.SideMenu);
+        return <SideMenu {...props} />;
+      },
+    }),
+  },
   Home: {
     screen: createDrawerNavigator(
       {
@@ -88,6 +98,7 @@ export default class App extends React.Component {
       <SuperNannies onNavigationStateChange={this.onNavigationStateChange} />
     </View>
   );
+
 
   render = () => (this.state.isLoaded ? this.renderApp() : this.renderApp());
 

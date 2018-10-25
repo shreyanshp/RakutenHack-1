@@ -72,14 +72,14 @@ export class Login_0 extends React.Component {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      
+
       console.log(errorCode);
       console.log(errorMessage);
     });
   };
 
   onLoginButtonPressed = () => {
-    this.props.navigation.navigate('Profile_parent');
+    this.props.navigation.navigate('Activities');
   };
 
   onForgotPasswordButtonPressed = () => {

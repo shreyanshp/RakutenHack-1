@@ -20,7 +20,7 @@ export class Activities extends React.Component {
     navigation: NavigationType.isRequired,
   };
   static navigationOptions = {
-    title: 'Article List'.toUpperCase(),
+    title: 'Activity List'.toUpperCase(),
   };
 
   state = {
