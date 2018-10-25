@@ -88,7 +88,7 @@ export class Login_0 extends React.Component {
 
 
   onSignUpButtonPressed = () => {
-    this.props.navigation.navigate('SignUp_0_initial');
+    this.props.navigation.navigate('SignUp_3_picture');
   };
 
   render = () => (

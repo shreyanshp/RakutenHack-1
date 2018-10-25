@@ -52,6 +52,12 @@ export const MainRoutes = [
         children: [],
       },
       {
+        id: 'SignUp_3_picture',
+        title: 'Sign Up 3',
+        screen: Screens.SignUp_3,
+        children: [],
+      },
+      {
         id: 'password',
         title: 'Password Recovery',
         screen: Screens.PasswordRecovery,

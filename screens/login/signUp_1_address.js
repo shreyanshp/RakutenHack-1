@@ -50,7 +50,7 @@ export class SignUp_1 extends React.Component {
 
   onContinueButtonPressed = () => {
 
-    this.props.navigation.navigate('SignUp_2_success',
+    this.props.navigation.navigate('SignUp',
       {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
