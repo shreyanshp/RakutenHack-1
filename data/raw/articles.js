@@ -1,10 +1,11 @@
-const articles = [{
+const articles = [
+{
   id: 1,
   photo: require('../img/photo1.png'),
   type: 'article',
   time: -300,
-  header: 'Plants Of Our Nature',
-  text: 'Ferns are a very old group of plants. They first appeared on Earth in the middle Devonian Era about 360 million years ago, just before the Carboniferous Era. Most of the modern fern families we see today first appeared in the Late Cretaceous about 45 or 50 million years ago – during the age of the dinosaurs!',
+  header: 'Foo Barb',
+  text: 'I am available from 5PM - 10PM to watch your children in the Minato-Ku area.',
   comments: [{
     id: 1,
     text: 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
@@ -38,28 +39,22 @@ const articles = [{
     text: 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     time: -2177,
   }],
-}, {
+},
+{
   id: 2,
   photo: require('../img/photo2.png'),
   type: 'article',
   time: -1373,
-  header: 'Balloon Trip',
-  text: 'Mostly it’s about hot air - for without that balloons are just big empty bags with baskets on the bottom. ' +
-  'The Montgolfier brothers had great hopes when they made the first manned flight. ' +
-  'They thought balloons would take off as an available means of commercial flight. ' +
-  'Instead, they have remained the province of sport, adventure and enjoyment. ' +
-  'Modern balloons are a lot more sophisticated than their ancestors, ' +
-  'but they still retain the essential characteristics which makes them so attractive. ' +
-  'A plane is claustrophobic and very noisy. Balloons are so gentle and majestic and silent when the burner’s not working.',
+  header: 'Barb Baz',
+  text: 'I am available in the mornings to watch your children in the Nishiogi area!',
   comments: [],
 }, {
   id: 3,
   photo: require('../img/photo3.png'),
   type: 'article',
   time: -2446,
-  header: 'Sea World',
-  text: 'The worlds oceans cover two thirds of our planet. As we take a dive from the rocks or paddle out from the beach, we are entering a place which is teeming with marine life. ' +
-  'From fish to crabs to octopuses or even sea creatures that have not yet been discovered, the oceans and its coastlines are an amazing and interesting foray of water wildlife.',
+  header: 'Feaux Bharb',
+  text: 'Hosts a soccer pitch where kids can play in the late afternoon. Tokyo area.',
   comments: [],
 }, {
   id: 4,
