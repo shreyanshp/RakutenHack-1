@@ -16,6 +16,10 @@ import { GradientButton } from '../../components/';
 import { scaleVertical } from '../../utils/scale';
 import NavigationType from '../../config/navigation/propTypes';
 
+import firebase from 'react-native-firebase';
+
+firebase.initializeApp();
+
 export class SignUp_0 extends React.Component {
 
   static navigationOptions = {
@@ -33,6 +37,7 @@ export class SignUp_0 extends React.Component {
       birthday: "",
       email: "",
       password: "",
+      phone: "",
     }
   }
 
@@ -47,6 +52,10 @@ export class SignUp_0 extends React.Component {
 
   onContinueButtonPressed = () => {
 
+    firebase.auth().signOut().catch(function(error) {
+      console.log(error);
+    });
+
     this.props.navigation.navigate('SignUp_1_address',
       {
         firstname: this.state.firstname,
@@ -54,6 +63,7 @@ export class SignUp_0 extends React.Component {
         birthday: this.state.birthday,
         email: this.state.email,
         password: this.state.password,
+        phone: this.state.phone,
       }
     );
   };
@@ -100,6 +110,12 @@ export class SignUp_0 extends React.Component {
             placeholder = 'Password'
             secureTextEntry
             onChangeText = {(password) => this.setState({password})}
+          />
+          <RkTextInput
+            rkType = 'rounded'
+            placeholder = 'Phone'
+            autoCorrect = {false}
+            onChangeText = {(phone) => this.setState({phone})}
           />
           <GradientButton
             style={styles.save}
