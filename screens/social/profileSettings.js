@@ -19,6 +19,8 @@ import {
 } from '../../components';
 import { FontAwesome } from '../../assets/icons';
 
+import firebase from 'react-native-firebase';
+
 export class ProfileSettings extends React.Component {
   static navigationOptions = {
     title: 'Profile Settings'.toUpperCase(),
@@ -42,6 +44,37 @@ export class ProfileSettings extends React.Component {
     password: this.user.password,
     newPassword: this.user.newPassword,
     confirmPassword: this.user.confirmPassword,
+  };
+
+  onVerifyEmailButtonPressed = () => {
+    console.log("Verify Email!!");
+  };
+
+  onVerifyPhoneNumberButtonPressed = () => {
+
+    const query2 = "https://nexmo-nexmo-sms-verify-v1.p.mashape.com/send-verification-code?phoneNumber="
+           const number = this.states.parent.phone
+           const brand = "&brand=SuperNannies"
+
+           fetch(query2 + number + brand, {
+             method: 'POST',
+             headers: {
+               'X-Mashape-Key': 'wMmtYwXUrbmsh3gx1sgXuT1f16KGp14uvGsjsnBDy5KZ3cTZEg',
+               'X-Mashape-Host': "nexmo-nexmo-sms-verify-v1.p.mashape.com",
+               Accept: 'application/json',
+               'Content-Type': 'application/json',
+             },})
+             .then((response) => response.json())
+             .then((responseJson) => {
+               // Do something here
+               console.log(responseJson);
+               return responseJson;
+             })
+             .catch((error) => {
+               console.error(error);
+               return "xx";
+             });
+
   };
 
   onFirstNameInputChanged = (text) => {
@@ -122,6 +155,18 @@ export class ProfileSettings extends React.Component {
               rkType='right clear'
             />
           </View>
+          <GradientButton
+            rkType = 'large'
+            style = {styles.button}
+            text = 'Verify Email'
+            onPress = {this.onVerifyEmailButtonPressed}
+          />
+          <GradientButton
+            rkType = 'large'
+            style = {styles.button}
+            text = 'Verify Phone'
+            onPress = {this.onVerifyPhoneNumberButtonPressed}
+          />
         </View>
 
         <View style={styles.section}>

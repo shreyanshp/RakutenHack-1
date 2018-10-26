@@ -22,7 +22,9 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "hoek": "^5.0.4",
     "moment": "^2.22.2",
+    "rapidapi-connect": "0.0.6",
     "react": "16.5.0",
     "react-native": "0.57.1",
     "react-native-firebase": "^5.0.0",
@@ -35,6 +37,7 @@
     "react-native-vector-icons": "^6.0.2",
     "react-navigation": "^2.18.0",
     "tcomb-form-native": "^0.6.20",
+    "unirest": "^0.5.1",
     "victory-native": "^30.5.0",
     "victory-pie-native": "^1.1.1",
     "yoga": "0.0.0",
