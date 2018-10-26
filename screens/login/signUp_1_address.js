@@ -32,8 +32,10 @@ export class SignUp_1 extends React.Component {
       birthday: this.props.navigation.state.params.birthday,
       email: this.props.navigation.state.params.email,
       password: this.props.navigation.state.params.password,
+      phone: this.props.navigation.state.params.phone,
       street: "",
       city: "",
+      state: "",
       country: "",
       zipcode: "",
     }
@@ -57,8 +59,10 @@ export class SignUp_1 extends React.Component {
         birthday: this.state.birthday,
         email: this.state.email,
         password: this.state.password,
+        phone: this.state.phone,
         street: this.state.street,
         city: this.state.city,
+        state: this.state.state,
         country: this.state.country,
         zipcode: this.state.zipcode,
       }
@@ -91,6 +95,12 @@ export class SignUp_1 extends React.Component {
             placeholder = 'City'
             autoCorrect = {false}
             onChangeText = {(city) => this.setState({city})}
+          />
+          <RkTextInput
+            rkType = 'rounded'
+            placeholder = 'State'
+            autoCorrect = {false}
+            onChangeText = {(state) => this.setState({state})}
           />
           <RkTextInput
             rkType = 'rounded'

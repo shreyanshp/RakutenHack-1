@@ -4,4 +4,5 @@ npm install moment --save
 npm install react-native-svg --save
 npm install react-native-linear-gradient --save
 npm install victory-native --save
-
+npm install unirest --save
+npm install rapidapi-connect --save

@@ -64,31 +64,42 @@ export class Login_0 extends React.Component {
   };
 
   onDummyButtonPressed = () => {
+    this.props.navigation.navigate('SignUp_0_initial');
+  };
+
+  onLoginButtonPressed = () => {
+
+    if (firebase.auth().currentUser != null) {
+      firebase.auth().signOut().catch(function(error) {
+        console.log(error);
+      });
+    }
 
     const email = this.state.email;
     const password = this.state.password;
 
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+    firebase.auth().signInWithEmailAndPassword(email, password).
+      then(
+        () => this.props.navigation.navigate('Profile_parent')
+      ).
+      catch(
+        function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
 
-      console.log(errorCode);
-      console.log(errorMessage);
-    });
-  };
-
-  onLoginButtonPressed = () => {
-    this.props.navigation.navigate('Activities');
+          console.log(errorCode);
+          console.log(errorMessage);
+        }
+      );
   };
 
   onForgotPasswordButtonPressed = () => {
     this.props.navigation.navigate('password');
   };
 
-
   onSignUpButtonPressed = () => {
-    this.props.navigation.navigate('SignUp_0_initial');
+    this.props.navigation.navigate('SignUp_3_picture');
   };
 
   render = () => (
