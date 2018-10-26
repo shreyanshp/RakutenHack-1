@@ -39,8 +39,10 @@ export class ProfileSettings extends React.Component {
     firstName: this.user.firstName,
     lastName: this.user.lastName,
     email: this.user.email,
+    email_verified: this.user.email_verified,
     country: this.user.country,
     phone: this.user.phone,
+    phone_verified: this.user.phone_verified,
     password: this.user.password,
     newPassword: this.user.newPassword,
     confirmPassword: this.user.confirmPassword,
@@ -53,28 +55,30 @@ export class ProfileSettings extends React.Component {
   onVerifyPhoneNumberButtonPressed = () => {
 
     const query2 = "https://nexmo-nexmo-sms-verify-v1.p.mashape.com/send-verification-code?phoneNumber="
-           const number = this.states.parent.phone
-           const brand = "&brand=SuperNannies"
+    const number = this.states.parent.phone
+    const brand = "&brand=SuperNannies"
 
-           fetch(query2 + number + brand, {
-             method: 'POST',
-             headers: {
-               'X-Mashape-Key': 'wMmtYwXUrbmsh3gx1sgXuT1f16KGp14uvGsjsnBDy5KZ3cTZEg',
-               'X-Mashape-Host': "nexmo-nexmo-sms-verify-v1.p.mashape.com",
-               Accept: 'application/json',
-               'Content-Type': 'application/json',
-             },})
-             .then((response) => response.json())
-             .then((responseJson) => {
-               // Do something here
-               console.log(responseJson);
-               return responseJson;
-             })
-             .catch((error) => {
-               console.error(error);
-               return "xx";
-             });
+    fetch(query2 + number + brand, {
+      method: 'POST',
+      headers: {
+        'X-Mashape-Key': 'wMmtYwXUrbmsh3gx1sgXuT1f16KGp14uvGsjsnBDy5KZ3cTZEg',
+        'X-Mashape-Host': "nexmo-nexmo-sms-verify-v1.p.mashape.com",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },})
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson);
+      return responseJson;
+    })
+    .catch((error) => {
+      console.error(error);
+      return "xx";
+    });
+  };
 
+  onAddGovtIDButtonPressed = () => {
+    this.props.navigation.navigate('SignUp_3_picture');
   };
 
   onFirstNameInputChanged = (text) => {
@@ -141,9 +145,16 @@ export class ProfileSettings extends React.Component {
           </View>
           <View style={styles.row}>
             <RkTextInput
-              label='Phone'
+              label='Phone Number'
               value={this.states.parent.phone}
               onChangeText={this.onPhoneInputChanged}
+              rkType='right clear'
+            />
+          </View>
+          <View style={styles.row}>
+            <RkTextInput
+              label='Phone Number Verified?'
+              value={this.states.parent.phone_verified.toString()}
               rkType='right clear'
             />
           </View>
@@ -155,6 +166,19 @@ export class ProfileSettings extends React.Component {
               rkType='right clear'
             />
           </View>
+          <View style={styles.row}>
+            <RkTextInput
+              label='Email Verified?'
+              value={this.states.parent.email_verified.toString()}
+              rkType='right clear'
+            />
+          </View>
+          <GradientButton
+            rkType = 'large'
+            style = {styles.button}
+            text = 'Verify Phone'
+            onPress = {this.onVerifyPhoneNumberButtonPressed}
+          />
           <GradientButton
             rkType = 'large'
             style = {styles.button}
@@ -164,8 +188,8 @@ export class ProfileSettings extends React.Component {
           <GradientButton
             rkType = 'large'
             style = {styles.button}
-            text = 'Verify Phone'
-            onPress = {this.onVerifyPhoneNumberButtonPressed}
+            text = 'Add Government ID'
+            onPress = {this.onAddGovtIDButtonPressed}
           />
         </View>
 
