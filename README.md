@@ -3,7 +3,7 @@
 ## Installation instructions for RakutenHack team
 
 
-I suppose you have NPM already installed
+I suppose you have NPM already installed. You should.
 
 Download the repository by using command line interface and typing in the folder where you desire to install
 
