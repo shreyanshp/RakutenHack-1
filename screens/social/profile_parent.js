@@ -61,7 +61,7 @@ export class Profile_parent extends React.Component {
     const id = this.props.navigation.getParam('id', 3);
     this.state.data = data.getUser(id);
 
-    this.state.parent = user;
+    this.state.parent = someVal;
   }
 
   onEditProfileSettingsButtonPressed = () => {
