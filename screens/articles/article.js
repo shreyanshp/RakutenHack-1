@@ -26,7 +26,7 @@ export class Article extends React.Component {
     navigation: NavigationType.isRequired,
   };
   static navigationOptions = {
-    title: 'Article View'.toUpperCase(),
+    title: 'Nanny Matching'.toUpperCase(),
   };
 
   constructor(props) {
