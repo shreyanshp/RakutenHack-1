@@ -15,6 +15,7 @@ import { data } from '../../data';
 import {
   Avatar,
   SocialBar,
+  GradientButton,
 } from '../../components';
 import NavigationType from '../../config/navigation/propTypes';
 
@@ -41,7 +42,7 @@ export class Article extends React.Component {
   render = () => (
     <ScrollView style={styles.root}>
       <RkCard rkType='article'>
-        <Image rkCardImg source={this.data.photo} />
+        <Image rkCardImg source={this.data.user.photo} />
         <View rkCardHeader>
           <View>
             <RkText style={styles.title} rkType='header4'>{this.data.header}</RkText>
@@ -58,10 +59,13 @@ export class Article extends React.Component {
             <RkText rkType='primary3 bigLine'>{this.data.text}</RkText>
           </View>
         </View>
-        <View rkCardFooter>
-          <SocialBar />
-        </View>
       </RkCard>
+      <GradientButton
+        rkType = 'large'
+        style = {styles.button}
+        text = 'REQUEST'
+        onPress = {this.onSaveButtonPressed}
+      />
     </ScrollView>
   )
 }

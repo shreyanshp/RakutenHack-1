@@ -39,7 +39,7 @@ export class Activities extends React.Component {
       activeOpacity={0.8}
       onPress={() => this.onItemPressed(item)}>
       <RkCard rkType='imgBlock' style={styles.card}>
-        <Image rkCardImg source={item.photo} />
+        <Image rkCardImg source={item.user.photo} />
         <View rkCardImgOverlay rkCardContent style={styles.overlay}>
           <RkText rkType='header4 inverseColor'>{item.header}</RkText>
           <RkText
