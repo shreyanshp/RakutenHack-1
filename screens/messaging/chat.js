@@ -96,7 +96,7 @@ export class Chat extends React.Component {
   };
 
 
-    ProcessIntent = (Intent, params) => {
+    ProcessIntent = (Intent) => {
       if(Intent == 'Price'){
         console.log("Price");
         return "The cost of the Soccer club is $"+ Math.random()*100 + " per hour ";
@@ -108,7 +108,7 @@ export class Chat extends React.Component {
       else if(Intent == 'none'){
         console.log("none");
           return "I'm only a bot but I will get smarter with time in order to answer to you";
-          
+
       }
       else if(Intent == 'About Nanny'){
         console.log("About Nanny");
@@ -129,7 +129,7 @@ export class Chat extends React.Component {
       else if(Intent=="no"){
         return "Dialing 999...";
       }
-     
+
       else{
 
             return "I'm only a bot but I will get smarter with time in order to answer to you";
