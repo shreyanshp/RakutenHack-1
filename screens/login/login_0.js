@@ -125,7 +125,7 @@ export class Login_0 extends React.Component {
           style={styles.save}
           rkType='large'
           onPress={this.onDummyButtonPressed}
-          text='DUMMY'
+          text='DEMO'
         />
         <GradientButton
           style={styles.save}

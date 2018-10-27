@@ -119,7 +119,7 @@ export class Profile_parent extends React.Component {
         <GradientButton
           style = {styles.save}
           rkType = 'large'
-          text = 'View Activities'
+          text = 'Search for nannies'
           onPress = {this.onViewActivitiesButtonPressed}
         />
       </View>
@@ -174,5 +174,12 @@ const styles = RkStyleSheet.create(theme => ({
   button: {
     flex: 1,
     alignSelf: 'center',
+  },
+
+  save: {
+    marginVertical: 9,
+  },
+  content: {
+    justifyContent: 'space-between',
   },
 }));
