@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Keyboard,
   InteractionManager,
+  Geolocation,
 } from 'react-native';
 import {
   RkButton,
@@ -98,17 +99,36 @@ export class Chat extends React.Component {
     ProcessIntent = (Intent, params) => {
       if(Intent == 'Price'){
         console.log("Price");
-        return "The cost of the Soccer club is "+ params["name"] + " per hour ";
+        return "The cost of the Soccer club is "+ params["Price"] + " per hour ";
       }
       else if(Intent == 'kid doing'){
         console.log("kids doing");
-          return name + "is playing with legos with the other kids ";
+          return params["name"] + " is playing with legos with the other kids ";
       }
       else if(Intent == 'none'){
         console.log("none");
           return "I'm only a bot but I will get smarter with time in order to answer to you";
-          params["name"]
+          
       }
+      else if(Intent == 'About Nanny'){
+        console.log("About Nanny");
+        return "The nanny that will be at the club is called: " + params['Nanny'];
+      }
+      else if(Intent == 'Calendar.CheckAvailability'){
+        return "According to "+ params['Nanny']+"'s calendar, "+ params['Nanny']+" should be available.";
+      }
+      else if(Intent == 'nanny.location'){
+        return ""+params['Nanny']+" is in "+(Geolocation)+". Is this ok?";
+      }
+      else if(Intent == 'schedule'){
+        return "This "+params["Activity"]+"will occur at "+params['Datetime'];
+      }
+      else if (Intent=='yes'){
+        return "That's good";
+      }
+      else if(Intent=="no"){
+        return "Dialing 999...";
+      } 
       else{
 
             return "I'm only a bot but I will get smarter with time in order to answer to you";

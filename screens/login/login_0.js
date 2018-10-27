@@ -99,7 +99,7 @@ export class Login_0 extends React.Component {
   };
 
   onSignUpButtonPressed = () => {
-    this.props.navigation.navigate('SignUp_3_picture');
+    this.props.navigation.navigate('SignUp_0_initial');
   };
 
   render = () => (
@@ -120,12 +120,6 @@ export class Login_0 extends React.Component {
           placeholder = 'Password'
           secureTextEntry
           onChangeText = {(password) => this.setState({password})}
-        />
-        <GradientButton
-          style={styles.save}
-          rkType='large'
-          onPress={this.onDummyButtonPressed}
-          text='DUMMY'
         />
         <GradientButton
           style={styles.save}
