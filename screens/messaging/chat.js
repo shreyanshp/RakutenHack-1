@@ -170,7 +170,7 @@ export class Chat extends React.Component {
         .then((response) => response.json())
         .then((responseJson) => {
           console.log(responseJson);
-            const message  = this.ProcessIntent(responseJson["topScoringIntent"]["intent"], responseJson["entities"][0]["entity"]);
+            const message  = this.ProcessIntent(responseJson["topScoringIntent"]["intent"]);
             console.log(message);
               this.state.data.messages.push({
                 id: message.length,
