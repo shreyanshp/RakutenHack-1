@@ -51,11 +51,18 @@ export class SplashScreen extends React.Component {
 
   onLoaded = () => {
     StatusBar.setHidden(false, 'slide');
+
     const toHome = StackActions.reset({
       index: 0,
       actions: [NavigationActions.navigate({ routeName: 'Home' })],
     });
-    this.props.navigation.dispatch(toHome);
+
+    const toLogin = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'Login' })],
+    });
+
+    this.props.navigation.dispatch(toLogin);
   };
 
   render = () => (
@@ -66,8 +73,7 @@ export class SplashScreen extends React.Component {
           source={require('../../assets/images/splashBack.png')}
         />
         <View style={styles.text}>
-          <RkText rkType='light' style={styles.hero}>React Native</RkText>
-          <RkText rkType='logo' style={styles.appName}>UI Kitten</RkText>
+          <RkText rkType='logo' style={styles.appName}>Super Nannies</RkText>
         </View>
       </View>
       <ProgressBar

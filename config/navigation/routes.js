@@ -28,6 +28,36 @@ export const MainRoutes = [
         children: [],
       },
       {
+        id: 'Login_0',
+        title: 'Login 0',
+        screen: Screens.Login_0,
+        children: [],
+      },
+      {
+        id: 'SignUp_0_initial',
+        title: 'Sign Up 0',
+        screen: Screens.SignUp_0,
+        children: [],
+      },
+      {
+        id: 'SignUp_1_address',
+        title: 'Sign Up 1',
+        screen: Screens.SignUp_1,
+        children: [],
+      },
+      {
+        id: 'SignUp_2_success',
+        title: 'Sign Up 2',
+        screen: Screens.SignUp_2,
+        children: [],
+      },
+      {
+        id: 'SignUp_3_picture',
+        title: 'Sign Up 3',
+        screen: Screens.SignUp_3,
+        children: [],
+      },
+      {
         id: 'password',
         title: 'Password Recovery',
         screen: Screens.PasswordRecovery,
@@ -41,6 +71,12 @@ export const MainRoutes = [
     icon: FontIcons.profile,
     screen: Screens.SocialMenu,
     children: [
+      {
+        id: 'Profile_parent',
+        title: 'User Profile (Parent)',
+        screen: Screens.Profile_parent,
+        children: [],
+      },
       {
         id: 'ProfileV1',
         title: 'User Profile V1',
@@ -91,6 +127,12 @@ export const MainRoutes = [
     icon: FontIcons.article,
     screen: Screens.ArticleMenu,
     children: [
+      {
+        id: 'Activities',
+        title: 'Activities',
+        screen: Screens.Activities,
+        children: [],
+      },
       {
         id: 'Articles1',
         title: 'Article List V1',

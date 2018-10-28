@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Keyboard,
   InteractionManager,
+  Geolocation,
 } from 'react-native';
 import {
   RkButton,
@@ -56,6 +57,30 @@ export class Chat extends React.Component {
     this.listRef = ref;
   };
 
+
+  detectLanguage = (text) => {
+    fetch('https://microsoft-azure-text-analytics-v1.p.mashape.com/languages/', {
+      method: 'POST',
+      headers: {
+        'X-Mashape-Key': 'wMmtYwXUrbmsh3gx1sgXuT1f16KGp14uvGsjsnBDy5KZ3cTZEg',
+        'X-Mashape-Host': 'microsoft-azure-text-analytics-v1.p.mashape.com',
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        documents:[{"id":"sentence1","text":text}],
+      }),
+      }).then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson["documents"][0]["detectedLanguages"][0]["iso6391Name"]);
+        return responseJson;
+      })
+      .catch((error) => {
+        console.error(error);
+        return "xx";
+      });
+    };
+
   extractItemKey = (item) => `${item.id}`;
 
   scrollToEnd = () => {
@@ -70,13 +95,98 @@ export class Chat extends React.Component {
     this.setState({ message: text });
   };
 
+
+    ProcessIntent = (Intent) => {
+      if(Intent == 'Price'){
+        console.log("Price");
+        return "The cost of the Soccer club is $"+ Math.random()*100 + " per hour ";
+      }
+      else if(Intent == 'kid doing'){
+        console.log("kids doing");
+          return " Takase is playing with legos with the other kids ";
+      }
+      else if(Intent == 'none'){
+        console.log("none");
+          return "I'm only a bot but I will get smarter with time in order to answer to you";
+
+      }
+      else if(Intent == 'About Nanny'){
+        console.log("About Nanny");
+        return "The nanny that will be at the club is called: John";
+      }
+      else if(Intent == 'Calendar.CheckAvailability'){
+        return "According to John's calendar, John should be available.";
+      }
+      else if(Intent == 'nanny.location'){
+        return "John is in Futako-Tamagawa. Is this ok?";
+      }
+      else if(Intent == 'schedule'){
+        return "This activity will occur at 7am tommorow";
+      }
+      else if (Intent=='yes'){
+        return "That's good";
+      }
+      else if(Intent=="no"){
+        return "Dialing 999...";
+      }
+
+      else{
+
+            return "I'm only a bot but I will get smarter with time in order to answer to you";
+      }
+    };
+
+
   onSendButtonPressed = () => {
     if (!this.state.message) {
       return;
     }
-    this.state.data.messages.push({
-      id: this.state.data.messages.length, time: 0, type: 'out', text: this.state.message,
-    });
+
+    fetch('https://microsoft-azure-text-analytics-v1.p.mashape.com/languages/', {
+      method: 'POST',
+      headers: {
+        'X-Mashape-Key': 'wMmtYwXUrbmsh3gx1sgXuT1f16KGp14uvGsjsnBDy5KZ3cTZEg',
+        'X-Mashape-Host': 'microsoft-azure-text-analytics-v1.p.mashape.com',
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        documents:[{"id":"sentence1","text":this.state.message}],
+      }),
+      }).then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson["documents"][0]["detectedLanguages"][0]["iso6391Name"]);
+        return responseJson;
+      })
+      .catch((error) => {
+        console.error(error);
+        return "xx";
+      });
+
+      const query = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/3c886efb-9253-403b-a733-f6041e3493e4?subscription-key=1d9161e8d8f44e3eb1b83cf8dd9f8e99&timezoneOffset=-360&q=' ;
+
+
+      fetch(query+ encodeURIComponent(this.state.message))
+        .then((response) => response.json())
+        .then((responseJson) => {
+          console.log(responseJson);
+            const message  = this.ProcessIntent(responseJson["topScoringIntent"]["intent"]);
+            console.log(message);
+              this.state.data.messages.push({
+                id: message.length,
+                time: 0,
+                type: 'out',
+                text: message ,
+              });
+
+              this.scrollToEnd(true);
+          return responseJson;
+        })
+        .catch((error) => {
+          console.error(error);
+          return "xx";
+        });
+
     this.setState({ message: '' });
     this.scrollToEnd(true);
   };
@@ -132,6 +242,7 @@ export class Chat extends React.Component {
     <RkAvoidKeyboard
       style={styles.container}
       onResponderRelease={Keyboard.dismiss}>
+
       <FlatList
         ref={this.setListRef}
         extraData={this.state}
