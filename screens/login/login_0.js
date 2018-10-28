@@ -25,6 +25,16 @@ firebase.initializeApp();
 
 var database = firebase.database();
 
+// What do I say about this piece of code?
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user);
+    console.log(firebase.auth().currentUser)
+  } else {
+    console.log("No one signed in.");
+  }
+});
+
 export class Login_0 extends React.Component {
 
   static propTypes = {

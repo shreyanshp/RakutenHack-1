@@ -22,7 +22,7 @@ firebase.initializeApp();
 
 var database = firebase.database();
 
-var ref = database.ref("/users/user2");
+// var ref = database.ref("/users/user2");
 
 var user = "";
 
